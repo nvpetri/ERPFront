@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: erp-front
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: API_URL
+        sync: false
+      - key: APP_ORIGIN
+        sync: false
+      - key: COMPANY_SLUG
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
