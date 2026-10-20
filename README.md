@@ -24,16 +24,16 @@ Prepare ERPBack primeiro. O gerente inicial é criado pelo seed da API e usa SEE
 
 Crie Web Service Node, branch main. A URL onrender.com é fornecida pelo serviço.
 
-| Campo | Valor |
-|---|---|
-| Build Command | npm ci && npm run build |
-| Start Command | npm start |
-| NODE_VERSION | 24 |
-| NODE_ENV | production |
-| API_URL | URL exata do ERPBack, sem barra final e sem /v1 |
-| APP_ORIGIN | URL exata deste ERPFront, sem barra final |
-| COMPANY_SLUG | Mesmo SEED_COMPANY_SLUG do ERPBack |
-| SESSION_SECRET | Chave aleatória de pelo menos 32 caracteres |
+| Campo          | Valor                                           |
+| -------------- | ----------------------------------------------- |
+| Build Command  | npm ci && npm run build                         |
+| Start Command  | npm start                                       |
+| NODE_VERSION   | 24                                              |
+| NODE_ENV       | production                                      |
+| API_URL        | URL exata do ERPBack, sem barra final e sem /v1 |
+| APP_ORIGIN     | URL exata deste ERPFront, sem barra final       |
+| COMPANY_SLUG   | Mesmo SEED_COMPANY_SLUG do ERPBack              |
+| SESSION_SECRET | Chave aleatória de pelo menos 32 caracteres     |
 
 Gere a chave no computador: node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))". As variáveis são definidas em Environment no Render; não é necessário arquivo .env no servidor e não devem usar prefixo NEXT_PUBLIC. Configure CORS_ORIGINS e PANEL_URL no ERPBack com a URL deste painel. render.yaml traz opção Blueprint/free para testes.
 
